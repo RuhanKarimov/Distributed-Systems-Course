@@ -18,13 +18,14 @@ docker compose up --build
 ```
 
 ## URLs
-- Frontend: http://localhost:8087
-- Backend health: http://localhost:8088/health
-- Backend actuator health: http://localhost:8088/actuator/health
+- Frontend: http://localhost:4090
+- Backend health: http://localhost:4091/health
+- Backend actuator health: http://localhost:4091/actuator/health
+- PostgreSQL: localhost:5454
 
 ## Ders Listesi Doğrulama
 ```bash
-curl http://localhost:8088/api/v1/courses
+curl http://localhost:4091/api/v1/courses
 ```
 
 ## Projenin Amacı (Ders Kapsamı)
