@@ -16,13 +16,32 @@ spring:
           time_zone: UTC
   flyway:
     enabled: true
+lab:
+  latency:
+    enabled: true
+    jitterMs: 100
+    delayMs: 10
+
+
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,metrics,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      percentiles:
+        http.server.requests: 0.5,0.95,0.99
+
 
 logging:
   level:
     com.campusflow.monolith: INFO
+    org.springframework.transaction: DEBUG
+    org.springframework.orm.jpa: DEBUG
+    org.hibernate.sql: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
